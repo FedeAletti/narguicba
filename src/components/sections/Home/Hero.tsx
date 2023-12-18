@@ -10,7 +10,7 @@ export function Hero() {
 
   return (
     <div className="grid min-h-screen items-end justify-center overflow-x-hidden">
-      <div className="animate-textCarousel flex w-screen flex-nowrap gap-6">
+      <div className="flex w-screen animate-textCarousel flex-nowrap gap-6">
         {Array.from({length: 30}).map((_, i) => (
           <div key={i} className="mb-5 flex flex-1  gap-3">
             <h1

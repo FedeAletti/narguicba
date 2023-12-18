@@ -8,9 +8,9 @@ export function Footer() {
       <aside>
         <LogoIcon />
         <p>
-          ACME Industries Ltd.
+          Narguilas Córdoba
           <br />
-          Providing reliable tech since 1992
+          Trayendo lo mejor del mercado desde 2017
         </p>
       </aside>
       <nav>

@@ -1,12 +1,30 @@
+"use client";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import React from "react";
+import React, {useEffect, useState} from "react";
+import {usePathname, useRouter} from "next/navigation";
 
 import {LogoIcon, CartIcon, ProfileIcon} from "./icons";
+import Link from "next/link";
 
 export function Navbar() {
+  const pathname = usePathname();
+
+  const [sectionColor, setSectionColor] = useState("/");
+
+  useEffect(() => {
+    switch (pathname) {
+      case "/":
+        setSectionColor("transparent");
+        break;
+      default:
+        setSectionColor("primary");
+        break;
+    }
+  }, [pathname]);
+
   return (
-    <div className="navbar bg-transparent">
+    <div className={`navbar bg-${sectionColor}`}>
       <div className="navbar-start">
         <div className="dropdown">
           <div className="btn btn-ghost lg:hidden" role="button" tabIndex={0}>
@@ -26,12 +44,13 @@ export function Navbar() {
             </svg>
           </div>
           <ul
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
             tabIndex={0}
           >
             <li>
-              <a>Item 1</a>
+              <Link href="/tienda">Tienda</Link>
             </li>
+            <li className="divider"></li>
             <li>
               <a>Parent</a>
               <ul className="p-2">

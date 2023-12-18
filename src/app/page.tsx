@@ -1,6 +1,6 @@
 import {BackgroundVideo} from "@/components/BackgroundVideo";
-import {Hero} from "@/components/sections/Hero";
-import {Main} from "@/components/sections/Main";
+import {Hero} from "@/components/sections/Home/Hero";
+import {Main} from "@/components/sections/Home/Main";
 
 export default function Home() {
   return (
